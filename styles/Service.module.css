@@ -3,6 +3,14 @@
     max-width: 80ex;
 }
 
+.refContainer {
+    float: right;
+}
+
+a.ref {
+    padding: 3px;
+}
+
 .main .serviceId {
     opacity: 0.5;
 }

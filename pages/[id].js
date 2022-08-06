@@ -2,6 +2,22 @@ import Link from 'next/link';
 import styles from '../styles/Service.module.css'
 import { fetch_services } from '../utils/fetch';
 
+function Ref({type, href}) {
+  const iconMap = new Map(Object.entries({
+    "Brukerdokumentasjon": "💡",
+    "Kildekode": "📃",
+    "Produksjonsmiljø": "↗️",
+    "Systemdokumentasjon": "⚙️",
+    "Testmiljø": "🔬",
+    "Utviklingsmiljø": "👩🏼‍💻",
+    'Tjenestebeskrivelse': "🛒",
+    "Rediger": "✏️"
+  }));
+  return (
+    <a className={styles.ref} href={href} title={type}>{iconMap.get(type) ?? "💣"}</a>
+  );
+}
+
 function Fact({title, children}) {
   return (
     <div className={styles.fact}>
@@ -12,9 +28,22 @@ function Fact({title, children}) {
 }
 
 export default function Service({svc}) {
+  const refs = [...svc.refs];
+  refs.push(...svc.servicelinks.map(d => ({
+    type: 'Tjenestebeskrivelse',
+    href: 'https://hjelp.uib.no/tas/public/ssp/content/detail/service?unid=' + d.unid,
+  })));
+  refs.push({
+    type: 'Rediger',
+    href: 'https://hjelp.uib.no/tas/secure/assetmgmt/card.html?unid=' + svc.unid,
+  })
+
   return (
     <>
       <main className={styles.main}>
+        <div className={styles.refContainer}>
+        { refs.map(ref => <Ref type={ref.type} href={ref.href} />)}
+        </div>
         <div>
           <span className={styles.serviceId}>{svc.id}</span>
           {' '}
