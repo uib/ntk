@@ -1,0 +1,42 @@
+.main {
+    margin: 5ex 10ex;
+}
+
+.main .serviceId {
+    opacity: 0.5;
+}
+
+.main .serviceShortName {
+    opacity: 0.5;
+}
+
+.factContainer {
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, 220px);
+}
+
+.fact {
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid salmon;
+    border-radius: 3px;
+}
+
+.fact :first-child {
+    font-size: 70%;
+    color: salmon;
+}
+
+.footer {
+    margin: 5ex 10ex;
+}
+
+.backlink {
+    font-wight: bold;
+    border: 1px solid black;
+    border-radius: 3px;
+    background: wheat;
+    padding: 0.3ex 0.8ex;
+}
