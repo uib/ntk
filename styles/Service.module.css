@@ -43,3 +43,14 @@
     background: wheat;
     padding: 0.3ex 0.8ex;
 }
+
+@media (prefers-color-scheme: dark) {
+    .main {
+        color-scheme: dark;
+    }
+    .fact, .backlink {
+        filter: invert(1);
+        color: #555;
+
+    }
+}
