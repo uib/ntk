@@ -24,7 +24,9 @@
 }
 
 .main .serviceList {
-  columns: 4;
+  width: 100%;
+  column-count: auto;
+  column-width: 25ex;
 }
 
 .main .serviceList li {
