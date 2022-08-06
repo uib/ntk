@@ -27,6 +27,12 @@ function Fact({title, children}) {
   );
 }
 
+function peopleWithRoles(svc, role) {
+  return svc.people
+    .filter(d => d.role == role)
+    .map(d => <div className={styles.person} title={d.role}>☻ {d.person}</div>);
+}
+
 export default function Service({svc}) {
   const refs = [...svc.refs];
   refs.push(...svc.servicelinks.map(d => ({
@@ -53,7 +59,7 @@ export default function Service({svc}) {
         <p>{svc.description}</p>
 
         <div className={styles.factContainer}>
-          <Fact title="Brukerstøtte">{svc.operatorgroup_firstline}</Fact>
+          <Fact title="Brukerstøtte">{svc.operatorgroup_firstline}{peopleWithRoles(svc, "Kontaktperson Brukerstøtte")}</Fact>
           <Fact title="Forretningsområde">{svc.business_domain}</Fact>
           <Fact title="Tjenestetype">{svc.servicetype}</Fact>
           <Fact title="Kritikalitet">{svc.criticality}</Fact>
@@ -61,8 +67,8 @@ export default function Service({svc}) {
             {svc.lifecycle}
             {svc.retirement_candidate && ' (Kandidat for utfasing)'}
           </Fact>
-          <Fact title="Tjenesteeier">{svc.owner}</Fact>
-          <Fact title="Team">{svc.operatorgroup_secondline}</Fact>
+          <Fact title="Tjenesteeier">{svc.owner}{peopleWithRoles(svc, "Kontaktperson Tjenesteeier")}</Fact>
+          <Fact title="Team">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Drift/forvaltning")}</Fact>
           <Fact title="Leverandør">{svc.supplier}</Fact>
         </div>
 
