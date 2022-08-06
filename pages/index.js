@@ -14,7 +14,7 @@ export default function Home({services}) {
       <main className={styles.main}>
         <h1>UiBs tjenesteportefølje</h1>
         <ul>
-        { services.map(svc => <li><Link href={'/' + svc.id}><a>{svc.asset_name}</a></Link></li>) }
+        { services.map(svc => <li key={svc.id}><Link href={'/' + svc.id}><a>{svc.asset_name}</a></Link></li>) }
         </ul>
       </main>
 
