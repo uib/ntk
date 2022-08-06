@@ -10,6 +10,7 @@ export async function fetch_services() {
     const before = Date.now();
     const res = await fetch('https://gw-uib.intark.uh-it.no/tk-topdesk/svc.json?app=nexttk');
     services = await res.json();
+    services = services.filter(svc => !svc.meta.archived);
     const after = Date.now();
     console.log(`Fetched data from tk-topdesk API in ${after - before}ms`)
     services_fetch_time = after;
