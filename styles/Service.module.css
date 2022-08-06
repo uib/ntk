@@ -1,5 +1,6 @@
 .main {
     margin: 5ex 10ex;
+    max-width: 80ex;
 }
 
 .main .serviceId {
@@ -11,22 +12,24 @@
 }
 
 .factContainer {
-    display: grid;
-    gap: 10px;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(auto-fit, 220px);
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .fact {
     margin: 2px;
     padding: 5px;
-    border: 1px solid salmon;
+    border: 1px solid brown;
     border-radius: 3px;
+    background: white;
+    width: 23ex;
 }
 
 .fact :first-child {
     font-size: 70%;
-    color: salmon;
+    color: brown;
 }
 
 .footer {

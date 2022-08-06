@@ -24,6 +24,7 @@ export default function Service({svc}) {
         <p>{svc.description}</p>
 
         <div className={styles.factContainer}>
+          <Fact title="Brukerstøtte">{svc.operatorgroup_firstline}</Fact>
           <Fact title="Forretningsområde">{svc.business_domain}</Fact>
           <Fact title="Tjenestetype">{svc.servicetype}</Fact>
           <Fact title="Kritikalitet">{svc.criticality}</Fact>
@@ -31,6 +32,9 @@ export default function Service({svc}) {
             {svc.lifecycle}
             {svc.retirement_candidate && ' (Kandidat for utfasing)'}
           </Fact>
+          <Fact title="Tjenesteeier">{svc.owner}</Fact>
+          <Fact title="Team">{svc.operatorgroup_secondline}</Fact>
+          <Fact title="Leverandør">{svc.supplier}</Fact>
         </div>
 
 
