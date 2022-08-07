@@ -45,7 +45,7 @@ a.ref {
     width: 23ex;
 }
 
-.fact :first-child {
+.fact > div:first-child {
     font-size: 70%;
     color: brown;
 }

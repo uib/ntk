@@ -70,6 +70,15 @@ export default function Service({svc}) {
           <Fact title="Tjenesteeier">{svc.owner}{peopleWithRoles(svc, "Kontaktperson Tjenesteeier")}</Fact>
           <Fact title="Team">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Drift/forvaltning")}</Fact>
           <Fact title="Leverandør">{svc.supplier}</Fact>
+
+          <Fact title="Leverer data til">
+            {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.parent.unid == svc.unid)
+                      .map(link => <div><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
+          </Fact>
+          <Fact title="Får data fra">
+            {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.child.unid == svc.unid)
+                      .map(link => <div><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
+          </Fact>
         </div>
 
 
