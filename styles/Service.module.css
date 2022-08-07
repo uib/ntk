@@ -48,6 +48,7 @@ a.ref {
 .fact > div:first-child {
     font-size: 70%;
     color: brown;
+    margin-top: -0.5ex;
 }
 
 .footer {
