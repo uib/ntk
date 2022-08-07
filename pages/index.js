@@ -14,7 +14,7 @@ export default function Home({services}) {
       <main className={styles.main}>
         <h1>UiBs tjenesteportefølje</h1>
         <ul className={styles.serviceList}>
-        { services.map(svc => <li key={svc.id}><Link href={'/' + svc.id}><a title={svc.name != svc.short_name && svc.name}><span className={styles.serviceId}>{svc.id}</span> {svc.short_name}</a></Link></li>) }
+        { services.map(svc => <li key={svc.id} className={styles['foo-bar']}><Link href={'/' + svc.id}><a className={styles['lifecycle-' + svc.lifecycle.substr(0, 1)]} title={svc.name != svc.short_name && svc.name}><span className={styles.serviceId}>{svc.id}</span> {svc.short_name}</a></Link></li>) }
         </ul>
       </main>
 
@@ -28,6 +28,6 @@ export default function Home({services}) {
 export async function getStaticProps(context) {
   const services = await fetch_services();
   return {
-    props: { services: services.map(({id, short_name, name}) => ({id, short_name, name})) }
+    props: { services: services.map(({id, short_name, name, lifecycle}) => ({id, short_name, name, lifecycle})) }
   }
 }
