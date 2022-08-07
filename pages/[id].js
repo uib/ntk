@@ -59,7 +59,10 @@ export default function Service({svc}) {
         <p>{svc.description}</p>
 
         <div className={styles.factContainer}>
+          <Fact title="Tjenesteeier">{svc.owner}{peopleWithRoles(svc, "Kontaktperson Tjenesteeier")}</Fact>
           <Fact title="Brukerstøtte">{svc.operatorgroup_firstline}{peopleWithRoles(svc, "Kontaktperson Brukerstøtte")}</Fact>
+          <Fact title="Forvaltingsteam">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Drift/forvaltning")}</Fact>
+          <Fact title="Leverandør">{svc.supplier}</Fact>
           <Fact title="Forretningsområde">{svc.business_domain}</Fact>
           <Fact title="Tjenestetype">{svc.servicetype}</Fact>
           <Fact title="Kritikalitet">{svc.criticality}</Fact>
@@ -67,10 +70,8 @@ export default function Service({svc}) {
             {svc.lifecycle}
             {svc.retirement_candidate && ' (Kandidat for utfasing)'}
           </Fact>
-          <Fact title="Tjenesteeier">{svc.owner}{peopleWithRoles(svc, "Kontaktperson Tjenesteeier")}</Fact>
-          <Fact title="Team">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Drift/forvaltning")}</Fact>
-          <Fact title="Leverandør">{svc.supplier}</Fact>
-
+        </div>
+        <div className={styles.factContainer}>
           <Fact title="Leverer data til">
             {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.parent.unid == svc.unid)
                       .map(link => <div><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
