@@ -9,6 +9,10 @@ on:
   push:
     branches: ["main"]
 
+  # Runs every day to get new data
+  schedule:
+    - cron: "10 18 * * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
