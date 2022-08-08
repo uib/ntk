@@ -30,7 +30,7 @@ function Fact({title, children}) {
 function peopleWithRoles(svc, role) {
   return svc.people
     .filter(d => d.role == role)
-    .map(d => <div className={styles.person} title={d.role} key={d.person}>☻ {d.person}</div>);
+    .map(d => <div className={styles.person} title={d.role}>☻ {d.person}</div>);
 }
 
 export default function Service({svc}) {
@@ -74,11 +74,11 @@ export default function Service({svc}) {
         <div className={styles.factContainer}>
           <Fact title="Leverer data til">
             {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.parent.unid == svc.unid)
-                      .map(link => <div><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
+                      .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
           </Fact>
           <Fact title="Får data fra">
             {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.child.unid == svc.unid)
-                      .map(link => <div><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
+                      .map(link => <div key={link.unid}><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
           </Fact>
         </div>
 
