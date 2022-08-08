@@ -30,7 +30,7 @@ function Fact({title, children}) {
 function peopleWithRoles(svc, role) {
   return svc.people
     .filter(d => d.role == role)
-    .map(d => <div className={styles.person} title={d.role}>☻ {d.person}</div>);
+    .map(d => <div className={styles.person} title={d.role} key={d.person}>☻ {d.person}</div>);
 }
 
 export default function Service({svc}) {

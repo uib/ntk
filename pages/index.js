@@ -14,7 +14,7 @@ export default function Home({services}) {
       <main className={styles.main}>
         <h1>UiBs tjenesteportefølje ({services.length})</h1>
         <ul className={styles.serviceList}>
-        { services.map(svc => <li key={svc.id} className={styles['foo-bar']}><Link href={'/' + svc.id}><a className={styles['lifecycle-' + svc.lifecycle.substr(0, 1)]} title={svc.name != svc.short_name && svc.name}><span className={styles.serviceId}>{svc.id}</span> {svc.short_name}</a></Link></li>) }
+        { services.map(svc => <li key={svc.id} className={styles['foo-bar']}><Link href={'/' + svc.id}><a className={styles['lifecycle-' + svc.lifecycle.substr(0, 1)]} title={svc.name != svc.short_name ? svc.name : undefined}><span className={styles.serviceId}>{svc.id}</span> {svc.short_name}</a></Link></li>) }
         </ul>
       </main>
 
