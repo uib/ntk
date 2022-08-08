@@ -34,6 +34,7 @@ a.ref {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 2ex 0;
 }
 
 .fact {
