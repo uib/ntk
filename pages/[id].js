@@ -30,7 +30,7 @@ function Fact({title, children}) {
 function peopleWithRoles(svc, role) {
   return svc.people
     .filter(d => d.role == role)
-    .map(d => <div className={styles.person} title={d.role}>☻ {d.person}</div>);
+    .map(d => <div className={styles.person} title={d.role} key={d.person}>☻ {d.person}</div>);
 }
 
 export default function Service({svc}) {
@@ -48,7 +48,7 @@ export default function Service({svc}) {
     <>
       <main className={styles.main}>
         <div className={styles.refContainer}>
-        { refs.map(ref => <Ref type={ref.type} href={ref.href} />)}
+        { refs.map(ref => <Ref type={ref.type} href={ref.href} key={ref.type + ref.href}/>)}
         </div>
         <div>
           <span className={styles.serviceId}>{svc.id}</span>
