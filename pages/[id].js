@@ -19,6 +19,9 @@ function Ref({type, href}) {
 }
 
 function Fact({title, children}) {
+  if (!children || children.length == 0)
+    return null;
+
   return (
     <div className={styles.fact}>
       <div>{title}</div>
