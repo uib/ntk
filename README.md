@@ -2,6 +2,9 @@ This is a small frontend application to explore the UiB service portfolio as exp
 
 The application is currently deployed as a static site at <https://uib.github.io/ntk/>.
 
+This site is automatically updated on push to this repo as well as daily on a
+schedule (via the GitHub Actions specified).
+
 # Development setup
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -20,3 +23,5 @@ npm run dev
 ```
 
 and then open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After this you just edit the source files and will see the results of the edits automatically reloaded in
+the browser. Nice!
