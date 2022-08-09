@@ -1,20 +1,22 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquareArrowUpRight, faCodeBranch, faQuestion, faBomb, faCircleInfo, faBug, faPencil, faScroll, faCode } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import styles from '../styles/Service.module.css'
 import { fetch_services } from '../utils/fetch';
 
 function Ref({type, href}) {
   const iconMap = new Map(Object.entries({
-    "Brukerdokumentasjon": "💡",
-    "Kildekode": "📃",
-    "Produksjonsmiljø": "↗️",
-    "Systemdokumentasjon": "⚙️",
-    "Testmiljø": "🔬",
-    "Utviklingsmiljø": "👩🏼‍💻",
-    'Tjenestebeskrivelse': "🛒",
-    "Rediger": "✏️"
+    "Brukerdokumentasjon": <FontAwesomeIcon icon={faQuestion} />,
+    "Kildekode": <FontAwesomeIcon icon={faCode} />,
+    "Produksjonsmiljø": <FontAwesomeIcon icon={faSquareArrowUpRight} />,
+    "Systemdokumentasjon": <FontAwesomeIcon icon={faCircleInfo} />,
+    "Testmiljø": <FontAwesomeIcon icon={faBug} />,
+    "Utviklingsmiljø": <FontAwesomeIcon icon={faCodeBranch} />,
+    'Tjenestebeskrivelse': <FontAwesomeIcon icon={faScroll} />,
+    "Rediger": <FontAwesomeIcon icon={faPencil} />,
   }));
   return (
-    <a className={styles.ref} href={href} title={type}>{iconMap.get(type) ?? "💣"}</a>
+    <a className={styles.ref} href={href} title={type}>{iconMap.get(type) ?? <FontAwesomeIcon icon={faBomb} /> }</a>
   );
 }
 
