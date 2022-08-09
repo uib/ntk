@@ -5,14 +5,14 @@ import { fetch_services } from '../utils/fetch'
 
 export default function Home({services}) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>UiBs tjenesteportefølje</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1>UiBs tjenesteportefølje ({services.length})</h1>
+      <div className={styles.main}>
+        <h1>UiBs tjeneste&shy;portefølje ({services.length})</h1>
         <ul className={styles.serviceList}>
         { services.map(svc =>
             <li key={svc.id} className={styles['foo-bar']}>
@@ -24,12 +24,8 @@ export default function Home({services}) {
             </li>)
         }
         </ul>
-      </main>
-
-      <footer className={styles.footer}>
-        <a href="https://www.uib.no">Universitetet i Bergen</a>
-      </footer>
-    </div>
+      </div>
+    </>
   )
 }
 

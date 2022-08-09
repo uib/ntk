@@ -51,7 +51,7 @@ export default function Service({svc}) {
 
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className={styles.refContainer}>
         { refs.map(ref => <Ref type={ref.type} href={ref.href} key={ref.type + ref.href}/>)}
         </div>
@@ -105,12 +105,10 @@ export default function Service({svc}) {
           </Fact>
         </div>
 
-
-
-      </main>
-      <footer className={styles.footer}>
-        <Link href="/"><a className={styles.backlink}>Tilbake</a></Link>
-      </footer>
+        <div className={styles.bottomNav}>
+          <Link href="/"><a className={styles.backlink}>Tilbake</a></Link>
+        </div>
+      </div>
     </>
   );
 }
