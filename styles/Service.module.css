@@ -60,10 +60,10 @@ a.ref {
 
 .backlink {
     font-weight: bold;
-    border: 1px solid black;
-    border-radius: 3px;
-    background: wheat;
-    padding: 0.3ex 0.8ex;
+    border-radius: 4px;
+    color: #eee;
+    background: brown;
+    padding: 0.4ex 0.8ex;
 }
 
 @media (prefers-color-scheme: dark) {
