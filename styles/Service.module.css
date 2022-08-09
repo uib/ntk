@@ -44,6 +44,7 @@ a.ref {
     padding: 5px;
     border: 1px solid brown;
     border-radius: 3px;
+    color: black;
     background: white;
     width: 25.5ex;
 }
@@ -70,9 +71,7 @@ a.ref {
     .main {
         color-scheme: dark;
     }
-    .fact, .backlink {
+    .refContainer, .fact, .backlink {
         filter: invert(1);
-        color: #555;
-
     }
 }
