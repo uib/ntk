@@ -80,6 +80,24 @@ export default function Service({svc}) {
             {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.parent.unid == svc.unid)
                       .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
           </Fact>
+
+          <Fact title="Innloggingstjenester i bruk">
+            {svc.links.filter(link => link.rel?.name === 'Tilbyr innlogging for' && link.child.unid == svc.unid)
+                      .map(link => <div key={link.unid}><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
+          </Fact>
+          <Fact title="Tilbyr innlogging for">
+            {svc.links.filter(link => link.rel?.name === 'Tilbyr innlogging for' && link.parent.unid == svc.unid)
+                      .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
+          </Fact>
+
+          <Fact title="Påvirkes av">
+            {svc.links.filter(link => link.rel === null && link.child.unid == svc.unid)
+                      .map(link => <div key={link.unid}><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
+          </Fact>
+          <Fact title="Påvirker">
+            {svc.links.filter(link => link.rel === null && link.parent.unid == svc.unid)
+                      .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
+          </Fact>
         </div>
 
 
