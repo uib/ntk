@@ -72,13 +72,13 @@ export default function Service({svc}) {
           </Fact>
         </div>
         <div className={styles.factContainer}>
-          <Fact title="Leverer data til">
-            {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.parent.unid == svc.unid)
-                      .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
-          </Fact>
           <Fact title="Får data fra">
             {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.child.unid == svc.unid)
                       .map(link => <div key={link.unid}><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
+          </Fact>
+          <Fact title="Leverer data til">
+            {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.parent.unid == svc.unid)
+                      .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
           </Fact>
         </div>
 
