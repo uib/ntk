@@ -37,6 +37,32 @@ a.lifecycle-4 {
   opacity: 0.5;
 }
 
+.serviceContainer {
+  width: 100%;
+  column-count: auto;
+  column-width: 25ex;
+}
+
+.serviceContainer > * {
+  display: block;
+  background: white;
+  width: 30ex;
+  padding: 0.5ex;
+  border: 1px solid brown;
+  border-radius: 3px;
+  margin-bottom: 1ex;
+  columns: auto;
+}
+
+.serviceContainer > * > * {
+  font-size: 70%;
+  margin: 0;
+}
+
+.serviceContainer code {
+  float: right;
+}
+
 .footer {
   display: flex;
   flex: 1;
