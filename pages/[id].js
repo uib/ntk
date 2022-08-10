@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareArrowUpRight, faCodeBranch, faQuestion, faBomb, faCircleInfo, faBug, faPencil, faScroll, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faSquareArrowUpRight, faCodeBranch, faQuestion, faBomb, faCircleInfo, faBug, faPencil, faScroll, faCode, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from '../styles/Service.module.css'
 import { fetch_services } from '../utils/fetch';
 
@@ -35,7 +36,7 @@ function Fact({title, children}) {
 function peopleWithRoles(svc, role) {
   return svc.people
     .filter(d => d.role == role)
-    .map(d => <div className={styles.person} title={d.role} key={d.person}>☻ {d.person}</div>);
+    .map(d => <div className={styles.person} title={d.role} key={d.person}><FontAwesomeIcon icon={faUser} /> {d.person}</div>);
 }
 
 export default function Service({svc}) {
@@ -51,6 +52,9 @@ export default function Service({svc}) {
 
   return (
     <>
+      <Head>
+        <title>{svc.name}</title>
+      </Head>
       <div className={styles.main}>
         <div className={styles.refContainer}>
         { refs.map(ref => <Ref type={ref.type} href={ref.href} key={ref.type + ref.href}/>)}
