@@ -1,6 +1,6 @@
 This is a small frontend application to explore the UiB service portfolio as exposed by the [public API](https://api-uib.intark.uh-it.no/catalog/api/3bf4bb7a-c730-4ccf-b4bb-7ac730fccfec).
 
-The application is currently deployed as a static site at <https://uib.github.io/ntk/>.
+The application is currently deployed as a static site at <https://ntk.app.uib.no/>.
 
 This site is automatically updated on push to this repo as well as daily on a
 schedule (via the GitHub Actions specified).
