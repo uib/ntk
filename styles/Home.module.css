@@ -80,4 +80,8 @@ a.lifecycle-4 {
 }
 
 @media (prefers-color-scheme: dark) {
+  .serviceContainer > * {
+    background: brown;
+    border: 1px solid black;
+  }
 }
