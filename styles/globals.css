@@ -51,6 +51,7 @@ main {
 
 article {
   max-width: 70ex;
+  padding: 0 2rem;
 }
 
 footer {
