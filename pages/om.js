@@ -78,7 +78,7 @@ leverandørene.
 
 ### Strukturen
 
-Tjenesteproteføljen vedlikeholdes hos UiB som en del av "Asset
+Tjenesteporteføljen vedlikeholdes hos UiB som en del av "Asset
 Management"-modulen i UiBhjelp. Hver tjeneste representeres med en post som
 angir identifikasjon og felter som beskriver tjenesten.
 
