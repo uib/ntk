@@ -55,7 +55,7 @@ og kanskje skriver under på kontrakter om tilgang til tjenesten. I større
 organisasjoner er ikke nødvendig kunderollen sammenfallende med den som faktisk
 bruker tjenesten.
 
-Ved universitetet har vi bestemt at alle tjenester skal ha formell
+Ved universitetet har vi bestemt at alle tjenester skal ha én formell
 organisatorisk eier. Det betyr at formell leder ved utpekt enhet har rollen
 *tjenesteeier* men dette omtales ofte som om at selve enheten er tjenesteeier.
 Som oftest vil det være utpekt en eller flere personer ved avdelingen som i
