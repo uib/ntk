@@ -46,8 +46,8 @@ oversikten og generelt om tjenester som kan trenge litt mer forklaring.
 
 Et sett med begrep man kan komme over er *produsent* og *konsument*, som jo
 egentlig er terminologi fra varehandel. Hvis dette brukes er det ofte i
-sammenhenger hvor man fokuserer på dataflyt eller hvordan tjenester produseres,
-som f.eks. kommer dette til uttrykk i at vi på IT-avdelingen har begynt å snakke
+sammenhenger hvor man fokuserer på dataflyt eller hvordan tjenester produseres.
+Som eksempel kommer dette til uttrykk i at vi på IT-avdelingen har begynt å snakke
 om produktorganisering for å fokusere på hvordan tjenesteproduksjonen skjer hos
 oss. En annen rolle som ofte kommer opp er *kunde* som alternativ til konsument
 eller bruker.  Dette brukes når man fokuserer på hvem som betaler for tjenester
