@@ -20,12 +20,20 @@ bruker i dagligtalen og alle synes å forstå, men i sammenhenger som denne så�
 vi ha en mer presis definisjon av hva vi mener. Dette blir litt abstrakt, men
 ...
 
-> Vi *definerer en tjeneste* som en *navngitt enhet av noe* som tilbys av *noen* og som *andre* kan benytte i et tidsrom for å oppnå en ønsket effekt. Den som tilbyr tjenesten kalles *tjenesteyter*. Den andre parten kalles *bruker*. Det foreligger en eksplisitt eller underforstått avtale om betingelser for bruk og om kvaliteten i tjenesten. Et annet viktig aspekt ved tjenester er at brukeren skjermes for kompleksitet, kunnskap, usikkerhet og spesifikke kostnader ved å frembringe tjenesten.
+> Vi *definerer en tjeneste* som et *navngitt noe* som tilbys av en *tjenesteyter*
+> og som en *bruker* kan benytte i et tidsrom for å oppnå en ønsket effekt.
 >
-> En *IT-tjeneste* er en tjeneste hvor *IT-teknologi inngår* som den viktigste delen av grensesnittet mot brukeren eller måten den ønskede effekten frambringes.
+> Det foreligger en eksplisitt eller underforstått avtale om betingelser for bruk og
+> om kvaliteten i tjenesten. Et annet viktig aspekt ved tjenester er at brukeren
+> skjermes for kompleksitet, fagkunnskap, eierskap, risiko og spesifikke kostnader ved å
+> frembringe tjenesten.
+>
+> En *IT-tjeneste* er en tjeneste hvor *IT-teknologi inngår* som den viktigste
+> delen av grensesnittet mot brukeren eller måten den ønskede effekten
+> frambringes.
 
 Nesten alt som IT-avdelingen gjør er å tilby IT-tjenester, men det er også mange
-andre enheter som tilbyr IT-tjenester ved universitetet, samt at vi har avtaler
+andre enheter ved universitetet som tilbyr IT-tjenester, samt at vi har avtaler
 om kjøp av IT-tjenester fra eksterne leverandører som kan benyttes av
 universitetets ansatte og studenter. *Alle disse IT-tjenestene inngår i denne
 katalogen.*
@@ -39,12 +47,13 @@ oversikten og generelt om tjenester som kan trenge litt mer forklaring.
 Et sett med begrep man kan komme over er *produsent* og *konsument*, som jo
 egentlig er terminologi fra varehandel. Hvis dette brukes er det ofte i
 sammenhenger hvor man fokuserer på dataflyt eller hvordan tjenester produseres,
-som f.eks. kommer dette til uttrykk i at vi på IT-avdelingen har begynt å
-snakke om produktorganisering for å fokusere på hvordan tjenesteproduksjonen
-skjer hos oss. En annen rolle som ofte kommer opp er *kunde* som alternativ til
-konsument.  Dette brukes når man fokuserer på hvem som betaler for tjenester og
-kanskje skriver under på kontrakter om bruk. I større organisasjoner er ikke
-nødvendig kunderollen sammenfallende med den som faktisk bruker tjenesten.
+som f.eks. kommer dette til uttrykk i at vi på IT-avdelingen har begynt å snakke
+om produktorganisering for å fokusere på hvordan tjenesteproduksjonen skjer hos
+oss. En annen rolle som ofte kommer opp er *kunde* som alternativ til konsument
+eller bruker.  Dette brukes når man fokuserer på hvem som betaler for tjenester
+og kanskje skriver under på kontrakter om tilgang til tjenesten. I større
+organisasjoner er ikke nødvendig kunderollen sammenfallende med den som faktisk
+bruker tjenesten.
 
 Ved universitetet har vi bestemt at alle tjenester skal ha formell
 organisatorisk eier. Det betyr at formell leder ved utpekt enhet har rollen
@@ -64,7 +73,7 @@ UiBhjelp, og disse vil framkomme i denne oversikten.
 
 Mange IT-tjenester realiseres ved hjelp av et IT-system, og det er ikke alltid
 like lett å skille mellom hva som er tjenesten og hva som er systemet – og ofte
-har disse til og med samme navn. Man vil ofte derfor støtte på begreper som
+har disse til og med samme navn. Man vil derfor ofte støtte på begreper som
 *systemeier* og *systemansvarlig* som egentlig brukes som synonymer for
 tjenesteeier og tjenesteansvarlig. Vi prøver å bevege oss bort fra dette, med vi
 har f.eks. enda
