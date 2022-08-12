@@ -22,7 +22,7 @@ vi ha en mer presis definisjon av hva vi mener. Dette blir litt abstrakt, men
 
 > Vi *definerer en tjeneste* som en *navngitt enhet av noe* som tilbys av *noen* og som *andre* kan benytte i et tidsrom for å oppnå en ønsket effekt. Den som tilbyr tjenesten kalles *tjenesteyter*. Den andre parten kalles *bruker*. Det foreligger en eksplisitt eller underforstått avtale om betingelser for bruk og om kvaliteten i tjenesten. Et annet viktig aspekt ved tjenester er at brukeren skjermes for kompleksitet, kunnskap, usikkerhet og spesifikke kostnader ved å frembringe tjenesten.
 >
-> En *IT-tjeneste* er en tjeneste hvor *IT-teknologi inngår* som den viktigste delen av grensesnittet mot brukeren eller måten den ønskede effektet frambringes.
+> En *IT-tjeneste* er en tjeneste hvor *IT-teknologi inngår* som den viktigste delen av grensesnittet mot brukeren eller måten den ønskede effekten frambringes.
 
 Nesten alt som IT-avdelingen gjør er å tilby IT-tjenester, men det er også mange
 andre enheter som tilbyr IT-tjenester ved universitetet, samt at vi har avtaler
@@ -37,14 +37,14 @@ I definisjonen over har vi nevnt to roller i forbindelse med tjenester, nemlig
 oversikten og generelt om tjenester som kan trenge litt mer forklaring.
 
 Et sett med begrep man kan komme over er *produsent* og *konsument*, som jo
-egentlig er teminologi fra varehandel. Hvis dette brukes er det ofte i
-sammenhenger hvor man fokuserer på hvordan tjenester produseres, som f.eks.
-kommer dette til uttrykk i at vi på IT-avdelingen har begynt å snakke om
-produktorganisering for å fokusere på hvordan tjenesteproduksjonen skjer hos
-oss. Et annen rolle som ofte kommer opp er *kunde* som alternativ til konsument.
-Dette brukes når man fokuserer på hvem som betaler for tjenester og kanskje
-skriver under på kontrakter om bruk. I større organisasjoner er ikke nødvendig
-kunderollen sammenfallende med den som faktisk bruker tjenesten.
+egentlig er terminologi fra varehandel. Hvis dette brukes er det ofte i
+sammenhenger hvor man fokuserer på dataflyt eller hvordan tjenester produseres,
+som f.eks. kommer dette til uttrykk i at vi på IT-avdelingen har begynt å
+snakke om produktorganisering for å fokusere på hvordan tjenesteproduksjonen
+skjer hos oss. En annen rolle som ofte kommer opp er *kunde* som alternativ til
+konsument.  Dette brukes når man fokuserer på hvem som betaler for tjenester og
+kanskje skriver under på kontrakter om bruk. I større organisasjoner er ikke
+nødvendig kunderollen sammenfallende med den som faktisk bruker tjenesten.
 
 Ved universitetet har vi bestemt at alle tjenester skal ha formell
 organisatorisk eier. Det betyr at formell leder ved utpekt enhet har rollen
@@ -52,14 +52,14 @@ organisatorisk eier. Det betyr at formell leder ved utpekt enhet har rollen
 Som oftest vil det være utpekt en eller flere personer ved avdelingen som i
 praksis forvalter ansvaret og disse har fått rollen *tjenesteansvarlig*. (Hvis
 ingen er utpekt som tjenesteansvarlig, så tilfaller den rollen tjenesteeier.
-Hvis ingen er utpekt som tjenesteeier for en IT-tjeneste så tilfallen denne
+Hvis ingen er utpekt som tjenesteeier for en IT-tjeneste så tilfaller denne
 rollen IT-direktøren.)
 
 En annen viktig rolle hos tjenesteyter er *brukerstøtte* som er kontaktpunktet
 for brukere som trenger hjelp til å benytte tjenesten. Vi bruker også begrepet
-*forvaltingsteam* om de som i praktisk vedlikeholder og tilrettelegger for
+*forvaltningsteam* om de som i praktisk vedlikeholder og tilrettelegger for
 tjenesten og som brukerstøtte vil kunne delegere problemsaker til. Vi har valgt
-å representere både brukerstøtte og forvaltingsteam ved operatørgrupper i
+å representere både brukerstøtte og forvaltningsteam ved operatørgrupper i
 UiBhjelp, og disse vil framkomme i denne oversikten.
 
 Mange IT-tjenester realiseres ved hjelp av et IT-system, og det er ikke alltid
@@ -72,7 +72,7 @@ har f.eks. enda
 som bruker og definerer disse begrepene.
 
 I personvernsammenheng så støter man også på de juridiske rollebegrepene
-*behandlingsansvarlig* og *databehandler*. Når behandligen av personopplysninger
+*behandlingsansvarlig* og *databehandler*. Når behandlingen av personopplysninger
 skjer i en tjeneste, så er dette virksomhetene som tilbyr en tjeneste og
 leverandørene.
 
