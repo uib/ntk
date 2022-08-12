@@ -38,20 +38,19 @@ a.lifecycle-4 {
 }
 
 .serviceContainer {
-  width: 100%;
-  column-count: auto;
-  column-width: 25ex;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: 1fr;
 }
 
 .serviceContainer > * {
-  display: block;
+  max-width: 40ex;
   background: white;
-  width: 30ex;
   padding: 0.5ex;
   border: 1px solid brown;
   border-radius: 3px;
-  margin-bottom: 1ex;
-  columns: auto;
+  max-height: 10ex;
+  overflow: auto;
 }
 
 .serviceContainer > * > * {
@@ -67,5 +66,21 @@ a.lifecycle-4 {
   .serviceContainer > * {
     background: brown;
     border: 1px solid black;
+  }
+}
+
+@media (min-width: 450px) {
+  .serviceContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .serviceContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  .serviceContainer {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
