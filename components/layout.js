@@ -5,7 +5,7 @@ function Navbar() {
         <nav>
             <ul>
                 <li><Link href="/">Hjem</Link></li>
-                <li><Link href="/all">Brukertjenester</Link></li>
+                <li><Link href="/all">Bruker&shy;tjenester</Link></li>
                 <li><a href="https://tjenester.app.uib.no">Power BI</a></li>
                 <li><Link href="/om">Om</Link></li>
             </ul>
