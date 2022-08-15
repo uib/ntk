@@ -64,6 +64,11 @@ ingen er utpekt som tjenesteansvarlig, så tilfaller den rollen tjenesteeier.
 Hvis ingen er utpekt som tjenesteeier for en IT-tjeneste så tilfaller denne
 rollen IT-direktøren.)
 
+Tjenesteeier er juridisk ansvarlig for tjenesten og den som står til ansvar ved
+tvister eller hvis noe går galt som f.eks. sikkerhetshendeler. Tjenesteeier er
+ansvarlig for å sørge for nødvendig finansiering for å drive tjenesten slik at
+den er tilgjengelig.
+
 En annen viktig rolle hos tjenesteyter er *brukerstøtte* som er kontaktpunktet
 for brukere som trenger hjelp til å benytte tjenesten. Vi bruker også begrepet
 *forvaltningsteam* om de som i praksis vedlikeholder og tilrettelegger for
@@ -90,6 +95,21 @@ leverandørene.
 Tjenesteporteføljen vedlikeholdes hos UiB som en del av "Asset
 Management"-modulen i UiBhjelp. Hver tjeneste representeres med en post som
 angir identifikasjon og felter som beskriver tjenesten.
+
+Tjenester klassifiseres til å tilhøre én av følgende typer:
+
+* *Bruker-tjeneste*. Dette er tjenester hvor hovedfunksjonen er å tilby et grensesnitt mot
+  en brukergruppe av folk. Brukergruppen kan være stor eller liten, med eksempler som alle
+  norsktalende i verden, alle studenter ved UiB, deltakere i forskningsprosjekt X eller
+  fagfolk ved lønnskontoret.
+
+* *Understøttende tjeneste*. Dette er tjenester som hovedsaktlig brukes av programmer for
+  som realiserer den overliggende tjenesten, typisk i form av APIer. Mange slike tjenester
+  har også et brukergrensesnitt for administratorene av tjenestene.
+
+* *Plattform*. Dette er tjenester som hovedsaklig tilbyr kjøremiljøer og fundamental infrastruktur
+  hvor applikasjoner som tilbyr IT-tjenester kan leve. Disse kan også tilby brukergresesnitt
+  for å konfigurere og sette opp ressurser.
 
 Data om tjenestene er tilgjengelig i et
 [API](https://api-uib.intark.uh-it.no/catalog/api/3bf4bb7a-c730-4ccf-b4bb-7ac730fccfec)
