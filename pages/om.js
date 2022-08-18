@@ -103,7 +103,7 @@ Tjenester klassifiseres til å tilhøre én av følgende typer:
   norsktalende i verden, alle studenter ved UiB, deltakere i forskningsprosjekt X eller
   fagfolk ved lønnskontoret.
 
-* *Understøttende tjeneste*. Dette er tjenester som hovedsaktlig brukes av programmer for
+* *Understøttende tjeneste*. Dette er tjenester som hovedsaktlig brukes av programmer
   som realiserer den overliggende tjenesten, typisk i form av APIer. Mange slike tjenester
   har også et brukergrensesnitt for administratorene av tjenestene.
 
