@@ -1,8 +1,12 @@
+import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 
 export default function About() {
     return (
         <article>
+            <Head>
+              <title>Om Tjenester</title>
+            </Head>
             <ReactMarkdown>
             {`
 ## Om Tjenester
