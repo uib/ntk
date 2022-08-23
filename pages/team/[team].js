@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { ServiceLink } from '../../components/servicelink';
 import { fetch_services } from '../../utils/fetch';
 
 export default function Team({team_name, services}) {
@@ -6,7 +6,7 @@ export default function Team({team_name, services}) {
         <div>
             <h1>Team {team_name} ({services.length})</h1>
             <ul>
-            { services.map(svc => <li key="svc.unid"><Link href={'/' + svc.id }><a><code>{svc.id}</code> {svc.short_name}: {svc.name}</a></Link></li>) }
+            { services.map(svc => <li key="svc.unid"><ServiceLink service={svc} fullname /></li>) }
             </ul>
         </div>
     );
