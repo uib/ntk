@@ -110,7 +110,7 @@ export default function Service({svc}) {
         </div>
 
         <div className={styles.bottomNav}>
-          <Link href="/"><a className={styles.backlink}>Tilbake</a></Link>
+          <Link href="/"><a className="backlink">Tilbake</a></Link>
         </div>
       </div>
     </>

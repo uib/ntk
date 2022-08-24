@@ -59,19 +59,11 @@ a.ref {
     margin-top: 3rem;
 }
 
-.backlink {
-    font-weight: bold;
-    border-radius: 4px;
-    color: white;
-    background: brown;
-    padding: 0.4ex 0.8ex;
-}
-
 @media (prefers-color-scheme: dark) {
     .main {
         color-scheme: dark;
     }
-    .refContainer, .fact, .backlink {
+    .refContainer, .fact {
         filter: invert(1);
     }
 }

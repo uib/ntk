@@ -16,11 +16,6 @@
   width: 100%;
   column-count: auto;
   column-width: 25ex;
-  padding: 0;
-}
-
-.main .serviceList li {
-  list-style-type: none;
 }
 
 .servicelink code {

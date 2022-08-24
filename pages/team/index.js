@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Teams({teams}) {
     return (
         <div>
-            <h1>Forvaltingsteam</h1>
+            <h1>Forvaltingsteam med tjenester</h1>
             <ul>
                 {teams.map(t => <li key={t.slug}><Link href={"/team/" + t.slug}><a>{t.name} ({t.count})</a></Link></li>)}
             </ul>
@@ -20,7 +20,7 @@ export async function getStaticProps(context) {
         teams.push(
             {
                 slug: t[0],
-                name: t[1][0].operatorgroup_secondline ?? "(Mangler)",
+                name: t[1][0].operatorgroup_secondline ?? "⚠︎ Tjenester som mangler forvaltingsteam",
                 count: t[1].length,
             }
         )
