@@ -16,3 +16,29 @@ export async function fetch_services() {
     services_fetch_time = after;
     return services;
 }
+
+export async function services_by_team() {
+    const services = await fetch_services();
+    let res = new Map();
+    for (const svc of services) {
+        const team = team_slug(svc.operatorgroup_secondline);
+        if (!res.has(team)) {
+            res.set(team, []);
+        }
+        res.get(team).push(svc);
+    }
+    return res;
+}
+
+export function team_slug(team_name) {
+    return String(team_name).
+        toLowerCase().
+        replaceAll('/', '-').
+        replaceAll('(', '').
+        replaceAll(')', '').
+        replaceAll('æ', 'ae').
+        replaceAll('ø', 'o').
+        replaceAll('å', 'a').
+        replace(/\s+/g, '-').
+        replace(/-+/g, '-');
+}

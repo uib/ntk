@@ -1,41 +1,17 @@
+import Link from 'next/link';
 import { ServiceLink } from '../../components/servicelink';
-import { fetch_services } from '../../utils/fetch';
+import { services_by_team } from '../../utils/fetch';
 
 export default function Team({team_name, services}) {
     return (
         <div>
-            <h1>Team {team_name} ({services.length})</h1>
+            <h1>Tjenestene til team<br/>{team_name} ({services.length})</h1>
             <ul>
             { services.map(svc => <li key="svc.unid"><ServiceLink service={svc} fullname /></li>) }
             </ul>
+            <p><Link href="/team"><a>Tilbake til team-listen</a></Link></p>
         </div>
     );
-}
-
-function team_slug(team_name) {
-    return String(team_name).
-        toLowerCase().
-        replaceAll('/', '-').
-        replaceAll('(', '').
-        replaceAll(')', '').
-        replaceAll('æ', 'ae').
-        replaceAll('ø', 'o').
-        replaceAll('å', 'a').
-        replace(/\s+/g, '-').
-        replace(/-+/g, '-');
-}
-
-async function services_by_team() {
-    const services = await fetch_services();
-    let res = new Map();
-    for (const svc of services) {
-        const team = team_slug(svc.operatorgroup_secondline);
-        if (!res.has(team)) {
-            res.set(team, []);
-        }
-        res.get(team).push(svc);
-    }
-    return res;
 }
 
 export async function getStaticPaths() {

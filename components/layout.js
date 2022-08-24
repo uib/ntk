@@ -6,6 +6,7 @@ function Navbar() {
             <ul>
                 <li><Link href="/">Hjem</Link></li>
                 <li><Link href="/all">Bruker&shy;tjenester</Link></li>
+                <li><Link href="/team">Team</Link></li>
                 <li><a href="https://tjenester.app.uib.no">Power BI</a></li>
                 <li><Link href="/om">Om</Link></li>
             </ul>
