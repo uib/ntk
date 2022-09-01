@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareArrowUpRight, faCodeBranch, faQuestion, faBomb, faCircleInfo, faBug, faPencil, faScroll, faCode, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { ServiceLink } from '../components/servicelink';
 import Head from 'next/head';
 import styles from '../styles/Service.module.css'
 import { fetch_services } from '../utils/fetch';
@@ -83,29 +84,29 @@ export default function Service({svc}) {
         <div className={styles.factContainer}>
           <Fact title="Får data fra">
             {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.child.unid == svc.unid)
-                      .map(link => <div key={link.unid}><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
+                      .map(link => <div key={link.unid}><ServiceLink service={link.parent}/></div> )}
           </Fact>
           <Fact title="Leverer data til">
             {svc.links.filter(link => link.rel?.name === 'Leverer data til' && link.parent.unid == svc.unid)
-                      .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
+                      .map(link => <div key={link.unid}><ServiceLink service={link.child}/></div> )}
           </Fact>
 
           <Fact title="Innloggingstjenester i bruk">
             {svc.links.filter(link => link.rel?.name === 'Tilbyr innlogging for' && link.child.unid == svc.unid)
-                      .map(link => <div key={link.unid}><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
+                      .map(link => <div key={link.unid}><ServiceLink service={link.parent}/></div> )}
           </Fact>
           <Fact title="Tilbyr innlogging for">
             {svc.links.filter(link => link.rel?.name === 'Tilbyr innlogging for' && link.parent.unid == svc.unid)
-                      .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
+                      .map(link => <div key={link.unid}><ServiceLink service={link.child}/></div> )}
           </Fact>
 
           <Fact title="Påvirkes av">
             {svc.links.filter(link => link.rel === null && link.child.unid == svc.unid)
-                      .map(link => <div key={link.unid}><Link href={'/' + link.parent.asset_name.split(' ')[0]}>{link.parent.asset_name}</Link></div> )}
+                      .map(link => <div key={link.unid}><ServiceLink service={link.parent}/></div> )}
           </Fact>
           <Fact title="Påvirker">
             {svc.links.filter(link => link.rel === null && link.parent.unid == svc.unid)
-                      .map(link => <div key={link.unid}><Link href={'/' + link.child.asset_name.split(' ')[0]}>{link.child.asset_name}</Link></div> )}
+                      .map(link => <div key={link.unid}><ServiceLink service={link.child}/></div> )}
           </Fact>
         </div>
 
@@ -127,8 +128,32 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const services = await fetch_services();
+  const services_by_unid = new Map(services.map(d => [d.unid, d]));
+  function add_svc_attrs(s1) {
+    const s2 = services_by_unid.get(s1.unid);
+    if (s2) {
+      s1.id = s2.id;
+      s1.short_name = s2.short_name;
+      s1.name = s2.name;
+      s1.lifecycle = s2.lifecycle;
+    }
+    else {
+      let [id, ...name] = s1.asset_name.split(' ');
+      s1.id = id;
+      s1.name = s1.short_name = name.join(' ');
+      s1.lifecycle = "9-Unknown";
+    }
+  }
   for (const svc of services) {
     if (svc.id == context.params.id) {
+      for (const link of svc.links) {
+        if (link.parent.unid != svc.unid) {
+          add_svc_attrs(link.parent);
+        }
+        if (link.child.unid != svc.unid) {
+          add_svc_attrs(link.child);
+        }
+      }
       return { props: { svc } };
     }
   }
