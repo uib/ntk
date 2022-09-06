@@ -1,0 +1,40 @@
+.main {
+    min-width: 30rem;
+}
+
+.domain {
+    background: white;
+    border: 1px solid grey;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.domain > h2 {
+    margin: 0;
+    width: 100%;
+    font-size: 120%;
+    /* text-align: center; */
+    background: brown;
+    color: white;
+    padding: 5px 1rem;
+}
+
+.domain > table {
+    width: 100%;
+    padding: 5px 1rem;
+}
+
+.domain > table tr:hover {
+    background: #eee;
+    transitition-delay: 1s;
+}
+
+.domain > table td:nth-child(1) {
+    width: 50%;
+    font-weight: bold;
+}
+.domain > table td:nth-child(2) {
+    width: 50%;
+    font-size: 80%;
+}

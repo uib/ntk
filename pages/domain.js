@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { ServiceLink } from '../components/servicelink'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Domain.module.css'
 import { fetch_services } from '../utils/fetch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
@@ -18,7 +18,7 @@ export default function Domain({domains}) {
       <div className={styles.main}>
         {
           domains.map(domain =>
-            <div key={domain.name}>
+            <div key={domain.name} className={styles.domain}>
               <h2>{domain.name}</h2>
               <table>
                 <tbody>
