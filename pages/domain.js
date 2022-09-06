@@ -52,6 +52,7 @@ export async function getStaticProps(context) {
 
   let prod_refs = [];
   for (const svc of services) {
+    if (svc.id == "TJ0303") continue;
     for (const ref of svc.refs) {
       if (ref.type == "Produksjonsmiljø") {
         let schemeless = ref.href.replace(/^(ldap|http)s?:\/\//, "");
