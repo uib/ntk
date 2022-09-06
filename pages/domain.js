@@ -19,7 +19,7 @@ export default function Domain({domains}) {
         {
           domains.map(domain =>
             <div key={domain.name} className={styles.domain}>
-              <h2>{domain.name}</h2>
+              <h2>{domain.name} { domain.refs.length > 2 ? <span className={styles.count}>({domain.refs.length})</span> : undefined }</h2>
               <table>
                 <tbody>
                 {

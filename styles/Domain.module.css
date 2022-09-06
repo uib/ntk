@@ -20,6 +20,10 @@
     padding: 5px 1rem;
 }
 
+.domain > h2 > .count {
+    float: right;
+}
+
 .domain > table {
     width: 100%;
     padding: 5px 1rem;
