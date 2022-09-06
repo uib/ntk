@@ -21,23 +21,25 @@ export default function Domain({domains}) {
             <div key={domain.name}>
               <h2>{domain.name}</h2>
               <table>
-              {
-                domain.refs.map(ref =>
-                  <tr key={ref.id + '-' + ref.href}>
-                    <td>
-                      <Link href={ref.href}>
-                        <a>
-                        <FontAwesomeIcon icon={faSquareArrowUpRight} />&nbsp;
-                        {ref.href_key}
-                        </a>
-                      </Link>
-                    </td>
-                    <td>
-                      <ServiceLink service={ref} />
-                    </td>
-                  </tr>
-                )
-              } 
+                <tbody>
+                {
+                  domain.refs.map(ref =>
+                    <tr key={ref.id + '-' + ref.href}>
+                      <td>
+                        <Link href={ref.href}>
+                          <a>
+                          <FontAwesomeIcon icon={faSquareArrowUpRight} />&nbsp;
+                          {ref.href_key}
+                          </a>
+                        </Link>
+                      </td>
+                      <td>
+                        <ServiceLink service={ref} />
+                      </td>
+                    </tr>
+                  )
+                }
+                </tbody>
               </table>
             </div>
           )
