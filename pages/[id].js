@@ -40,6 +40,14 @@ function peopleWithRoles(svc, role) {
     .map(d => <div className={styles.person} title={d.role} key={d.person}><FontAwesomeIcon icon={faUser} /> {d.person}</div>);
 }
 
+function format_date(isodate, len=16) {
+  let ret = isodate.replace('T', ' ').substr(0, len);
+  if (len >= 13 && isodate[isodate.length-1] == 'Z') {
+    ret += 'Z';
+  }
+  return ret;
+}
+
 export default function Service({svc}) {
   const refs = [...svc.refs];
   refs.push(...svc.servicelinks.map(d => ({
@@ -108,6 +116,11 @@ export default function Service({svc}) {
             {svc.links.filter(link => link.rel === null && link.parent.unid == svc.unid)
                       .map(link => <div key={link.unid}><ServiceLink service={link.child}/></div> )}
           </Fact>
+        </div>
+
+        <div className={styles.timeStamp}>
+          as of {format_date(svc.meta.sdate)}
+          , modified {format_date(svc.meta.mdate, 10)}
         </div>
 
         <div className={styles.bottomNav}>

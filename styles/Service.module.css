@@ -55,6 +55,12 @@ a.ref {
     margin-top: -0.5ex;
 }
 
+.timeStamp {
+    margin: 0;
+    opacity: 0.5;
+    font-size: 60%;
+}
+
 .bottomNav {
     margin-top: 3rem;
 }
