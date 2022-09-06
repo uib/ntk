@@ -25,10 +25,12 @@ export default function Domain({domains}) {
                 domain.refs.map(ref =>
                   <tr key={ref.href}>
                     <td>
-                      <a href={ref.href}>
+                      <Link href={ref.href}>
+                        <a>
                         <FontAwesomeIcon icon={faSquareArrowUpRight} />&nbsp;
                         {ref.href_key}
-                      </a>
+                        </a>
+                      </Link>
                     </td>
                     <td>
                       <ServiceLink service={ref} />
