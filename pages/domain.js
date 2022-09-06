@@ -23,7 +23,7 @@ export default function Domain({domains}) {
               <table>
               {
                 domain.refs.map(ref =>
-                  <tr key={ref.href}>
+                  <tr key={ref.id + '-' + ref.href}>
                     <td>
                       <Link href={ref.href}>
                         <a>
