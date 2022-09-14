@@ -34,9 +34,9 @@ function Fact({title, children}) {
   );
 }
 
-function peopleWithRoles(svc, role) {
+function peopleWithRoles(svc, ...role) {
   return svc.people
-    .filter(d => d.role == role)
+    .filter(d => role.includes(d.role))
     .map(d => <div className={styles.person} title={d.role} key={d.person}><FontAwesomeIcon icon={faUser} /> {d.person}</div>);
 }
 
@@ -79,7 +79,7 @@ export default function Service({svc}) {
         <div className={styles.factContainer}>
           <Fact title="Tjenesteeier">{svc.owner}{peopleWithRoles(svc, "Kontaktperson Tjenesteeier")}</Fact>
           <Fact title="Brukerstøtte">{svc.operatorgroup_firstline}{peopleWithRoles(svc, "Kontaktperson Brukerstøtte")}</Fact>
-          <Fact title="Forvaltingsteam">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Drift/forvaltning")}</Fact>
+          <Fact title="Forvaltingsteam">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Drift/forvaltning", "Utvikler")}</Fact>
           <Fact title="Leverandør">{svc.supplier}</Fact>
           <Fact title="Forretningsområde">{svc.business_domain}</Fact>
           <Fact title="Tjenestetype">{svc.servicetype}</Fact>
