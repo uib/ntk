@@ -22,6 +22,7 @@ export default function Home({services, synced_date}) {
         <input
             value={filter}
             onChange={event => setFilter(event.target.value)}
+            placeholder="Søk"
         />
         <h1>UiBs tjeneste&shy;portefølje ({filtered_services.length}{filter_lc ? ` med "${filter}"` : undefined})</h1>
         <ul className={styles.serviceList}>
@@ -31,7 +32,7 @@ export default function Home({services, synced_date}) {
             </li>)
         }
         </ul>
-        <p><em>Data hentet fra UiBhjelp {synced_date}Z</em></p>
+        <p class={styles.timeStamp}><em>Data hentet fra UiBhjelp {synced_date}Z</em></p>
       </div>
     </>
   )
@@ -48,7 +49,6 @@ export async function getStaticProps(context) {
           name: svc.name,
           lifecycle: svc.lifecycle,
           search_body: [
-            svc.id,
             svc.asset_name,
             svc.name,
             svc.description
