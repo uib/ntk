@@ -32,7 +32,7 @@ export default function Home({services, synced_date}) {
             </li>)
         }
         </ul>
-        <p class={styles.timeStamp}><em>Data hentet fra UiBhjelp {synced_date}Z</em></p>
+        <p className={styles.timeStamp}><em>Data hentet fra UiBhjelp {synced_date}Z</em></p>
       </div>
     </>
   )
