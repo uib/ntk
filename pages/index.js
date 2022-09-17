@@ -24,7 +24,7 @@ export default function Home({services, synced_date}) {
             onChange={event => setFilter(event.target.value)}
             placeholder="Søk"
         />
-        <h1>UiBs tjeneste&shy;portefølje ({filtered_services.length}{filter_lc ? ` med "${filter}"` : undefined})</h1>
+        <h1>UiBs tjeneste&shy;portefølje ({filtered_services.length || "ingen"}{filter_lc ? ` med «${filter}»` : undefined})</h1>
         <ul className={styles.serviceList}>
         { filtered_services.map(svc =>
             <li key={svc.id}>
