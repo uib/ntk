@@ -51,7 +51,8 @@ export async function getStaticProps(context) {
           search_body: [
             svc.asset_name,
             svc.name,
-            svc.description
+            svc.description,
+            ...svc.people.map(p => p.person),
           ].join('\n').toLowerCase(),
         }
       )),
