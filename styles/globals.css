@@ -86,7 +86,7 @@ footer {
   padding: 1rem 2rem;
 }
 
-.backlink {
+.button {
   font-weight: bold;
   border-radius: 4px;
   color: white;
@@ -105,7 +105,7 @@ footer {
   article em, article a {
     color: hsl(0, 59%, 80%);
   }
-  .backlink {
+  .button {
     filter: invert(1);
   }
 }

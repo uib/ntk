@@ -33,6 +33,13 @@ export default function Home({services, synced_date}) {
         }
         </ul>
         <p className={styles.timeStamp}><em>Data hentet fra UiBhjelp {synced_date}Z</em></p>
+        { filtered_services.length < 20
+            ? <p><br/>Finner du ikke tjenesten kan du jo vurdere å<br/><br/>
+                 <a className="button" href="https://hjelp.uib.no/tas/secure/assetmgmt/card.html?action=new&unid=new&subtype=5D377B47-0828-44B0-B091-D685B5AC0F07">Registrere en ny</a>
+              </p>
+            : undefined
+        }
+
       </div>
     </>
   )
