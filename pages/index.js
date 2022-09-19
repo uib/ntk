@@ -52,6 +52,9 @@ export async function getStaticProps(context) {
             svc.asset_name,
             svc.name,
             svc.description,
+            svc.internal_notes,
+            svc.supplier,
+            ...svc.refs.map(r => r.href),
             ...svc.people.map(p => p.person),
           ].join('\n').toLowerCase(),
         }
