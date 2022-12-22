@@ -6,7 +6,7 @@ export default function Teams({teams}) {
         <div>
             <h1>Forvaltingsteam med tjenester</h1>
             <ul>
-                {teams.map(t => <li key={t.slug}><Link href={"/team/" + t.slug}><a>{t.name} ({t.count})</a></Link></li>)}
+                {teams.map(t => <li key={t.slug}><Link href={"/team/" + t.slug}>{t.name} ({t.count})</Link></li>)}
             </ul>
         </div>
     );

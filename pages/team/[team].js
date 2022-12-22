@@ -9,7 +9,7 @@ export default function Team({team_name, services}) {
             <ul>
             { services.map(svc => <li key="svc.unid"><ServiceLink service={svc} fullname /></li>) }
             </ul>
-            <p><Link href="/team"><a className="button">Tilbake til team-listen</a></Link></p>
+            <p><Link href="/team" className="button">Tilbake til team-listen</Link></p>
         </div>
     );
 }

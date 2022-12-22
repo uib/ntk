@@ -27,10 +27,8 @@ export default function Domain({domains}) {
                     <tr key={ref.id + '-' + ref.href}>
                       <td>
                         <Link href={ref.href}>
-                          <a>
                           <FontAwesomeIcon icon={faSquareArrowUpRight} />&nbsp;
                           {ref.href_key}
-                          </a>
                         </Link>
                       </td>
                       <td>

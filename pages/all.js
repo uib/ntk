@@ -16,11 +16,9 @@ export default function Home({services}) {
         <div className={styles.serviceContainer}>
         { services.map(svc =>
             <Link href={'/' + svc.id} key={svc.id}>
-                <a>
-                  <code>{svc.id}</code>
-                  <h3>{svc.name}</h3>
-                  <p>{svc.description}</p>
-                </a>
+              <code>{svc.id}</code>
+              <h3>{svc.name}</h3>
+              <p>{svc.description}</p>
             </Link>)
         }
         </div>

@@ -7,12 +7,11 @@ export function ServiceLink({service, fullname}) {
         name += ': ' + service.name;
     }
     return (
-        <Link href={'/' + service.id }>
-            <a className={styles['lifecycle-' + service.lifecycle.substr(0, 1)] + ' ' + styles.servicelink}
-               title={(!fullname && service.name != service.short_name) ? service.name : undefined}
-            >
-                <code>{service.id}</code> {name}
-            </a>
+        <Link href={'/' + service.id }
+              className={styles['lifecycle-' + service.lifecycle.substr(0, 1)] + ' ' + styles.servicelink}
+              title={(!fullname && service.name != service.short_name) ? service.name : undefined}
+        >
+            <code>{service.id}</code> {name}
         </Link>
     );
 }

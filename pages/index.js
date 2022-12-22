@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { ServiceLink } from '../components/servicelink'
 import styles from '../styles/Home.module.css'
 import { fetch_services } from '../utils/fetch'
