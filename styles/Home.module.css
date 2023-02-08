@@ -46,6 +46,11 @@
   opacity: 0.5;
 }
 
+.servicelink.lifecycle-3 code {
+  text-decoration: line-through;
+  opacity: 0.25;
+}
+
 .servicelink.lifecycle-4 {
   text-decoration: line-through;
   opacity: 0.5;
