@@ -25,7 +25,7 @@ vi ha en mer presis definisjon av hva vi mener. Dette blir litt abstrakt, men
 ...
 
 > Vi *definerer en tjeneste* som et *navngitt noe* som tilbys av en *tjenesteyter*
-> og som en *bruker* kan benytte i et tidsrom for å oppnå en ønsket effekt.
+> og som *brukere* kan benytte i et tidsrom for å oppnå en ønsket effekt.
 >
 > Det foreligger en eksplisitt eller underforstått avtale om betingelser for bruk og
 > om kvaliteten i tjenesten. Et annet viktig aspekt ved tjenester er at brukeren
