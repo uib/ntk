@@ -12,7 +12,7 @@ export default function Home({services}) {
       </Head>
 
       <div className={styles.main}>
-        <h1>UiBs katalog over bruker&shy;tjenester ({services.length})</h1>
+        <h1>UiBs katalog over aktive bruker&shy;tjenester ({services.length})</h1>
         <div className={styles.serviceContainer}>
         { services.map(svc =>
             <Link href={'/' + svc.id} key={svc.id}>
