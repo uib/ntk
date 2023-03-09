@@ -18,8 +18,8 @@ export default function Domain({domains}) {
       <div className={styles.main}>
         {
           domains.map(domain =>
-            <div key={domain.name} className={styles.domain}>
-              <h2>{domain.name} { domain.refs.length > 2 ? <span className={styles.count}>({domain.refs.length})</span> : undefined }</h2>
+            <details key={domain.name} className={styles.domain} open={domain.refs.length < 3}>
+              <summary>{domain.name} { domain.refs.length > 2 ? <span className={styles.count}>({domain.refs.length})</span> : undefined }</summary>
               <table>
                 <tbody>
                 {
@@ -39,7 +39,7 @@ export default function Domain({domains}) {
                 }
                 </tbody>
               </table>
-            </div>
+            </details>
           )
         }
       </div>

@@ -5,18 +5,19 @@
 .domain {
     background: white;
     border: 1px solid grey;
-    border-radius: 8px;
+    border-radius: 6px;
     margin-bottom: 2rem;
-    overflow: hidden;
+    min-height: 2.5rem;
 }
 
-.domain > h2 {
-    margin: 0;
+.domain > summary {
     width: 100%;
     font-size: 120%;
+    font-weight: bold;
     /* text-align: center; */
     background: brown;
     color: white;
+    border-radius: 5px 5px 0 0;
     padding: 5px 1rem;
 }
 
