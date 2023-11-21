@@ -55,7 +55,7 @@ export async function getStaticProps(context) {
     if (svc.id == "TJ0303") continue;
     for (const ref of svc.refs) {
       if (ref.type == "Produksjonsmiljø") {
-        let schemeless = ref.href.replace(/^(ldap|http)s?:\/\//, "");
+        let schemeless = ref.href.replace(/^(ssh|ldap|http)s?:\/\//, "");
         let [host, path] = schemeless.split('/', 2);
         let host_lst = host.split('.');
         let topdomain = [host_lst.pop(), host_lst.pop()].reverse().join('.');
