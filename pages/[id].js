@@ -108,6 +108,15 @@ export default function Service({svc}) {
                       .map(link => <div key={link.unid}><ServiceLink service={link.child}/></div> )}
           </Fact>
 
+          <Fact title="Blir understøttet av">
+            {svc.links.filter(link => link.rel?.name === 'Understøtter' && link.child.unid == svc.unid)
+                      .map(link => <div key={link.unid}><ServiceLink service={link.parent}/></div> )}
+          </Fact>
+          <Fact title="Understøtter">
+            {svc.links.filter(link => link.rel?.name === 'Understøtter' && link.parent.unid == svc.unid)
+                      .map(link => <div key={link.unid}><ServiceLink service={link.child}/></div> )}
+          </Fact>
+
           <Fact title="Påvirkes av">
             {svc.links.filter(link => link.rel === null && link.child.unid == svc.unid)
                       .map(link => <div key={link.unid}><ServiceLink service={link.parent}/></div> )}
