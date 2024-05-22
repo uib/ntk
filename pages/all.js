@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       services: services
-        .filter(svc => svc.lifecycle.match(/^[23]-/) && svc.servicetype == "Bruker-tjeneste")
+        .filter(svc => svc.lifecycle.match(/^[23] -/) && svc.servicetype == "Brukertjeneste")
         .sort((a, b) => (a.name || a.short_name).toLowerCase().localeCompare((b.name || b.short_name).toLowerCase(), 'nb'))
         .map(({id, short_name, name, description}) => ({id, short_name, name, description}))
     }
