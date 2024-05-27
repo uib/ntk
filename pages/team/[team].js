@@ -8,9 +8,26 @@ export default function Team({team_name, services}) {
             { team_name ? <h1>Tjenestene til team<br/>{team_name} ({services.length})</h1>
                         : <h1>Tjenester som mangler forvaltingsteam ({services.length})</h1>
             }
-            <ul>
-            { services.map(svc => <li key="svc.unid"><ServiceLink service={svc} fullname /></li>) }
-            </ul>
+            <table>
+              <thead>
+              <tr>
+                <td></td>
+                <td>BS</td>
+                <td>FF</td>
+                <td>TF</td>
+              </tr>
+              </thead>
+              <tbody>
+            { services.map(svc =>
+              <tr key="svc.unid">
+                <td><ServiceLink service={svc} fullname /></td>
+                <td>{team_name && svc.operatorgroup_firstline  == team_name ? "🟥" : "⬜️"}</td>
+                <td>{team_name && svc.operatorgroup_secondline == team_name ? "🟥" : "⬜️"}</td>
+                <td>{team_name && svc.operatorgroup_thirdline  == team_name ? "🟥" : "⬜️"}</td>
+              </tr>)
+            }
+              </tbody>
+            </table>
             <p><Link href="/team" className="button">Tilbake til team-listen</Link></p>
         </div>
     );
