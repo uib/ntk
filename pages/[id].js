@@ -81,7 +81,7 @@ export default function Service({svc}) {
           <Fact title="Brukerstøtte">{svc.operatorgroup_firstline}{peopleWithRoles(svc, "Kontaktperson Brukerstøtte")}</Fact>
           <Fact title="Forvaltingsteam">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Drift/forvaltning", "Utvikler")}</Fact>
           <Fact title="Leverandør">{svc.supplier}</Fact>
-          <Fact title="Forretningsområde">{svc.business_domain}</Fact>
+          <Fact title="Produktstyre">{svc.business_domain}</Fact>
           <Fact title="Tjenestetype">{svc.servicetype}</Fact>
           <Fact title="Kritikalitet">{svc.criticality}</Fact>
           <Fact title="Livssyklus">
