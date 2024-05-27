@@ -22,7 +22,7 @@ export default function Home({services}) {
       <div className={styles.main}>
         <h1>UiBs katalog over tilbudte bruker&shy;tjenester ({filtered_services.length})</h1>
         { Object.keys(filter).map(k =>
-        <label>
+        <label key={k}>
           <input
             type="checkbox"
             checked={filter[k]}
