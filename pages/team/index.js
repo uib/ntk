@@ -30,8 +30,8 @@ export async function getStaticProps(context) {
         teams.push(
             {
                 slug: t[0],
-                name: t[1][0].operatorgroup_secondline ?? "⚠︎ Tjenester som mangler forvaltingsteam",
-                count: t[1].length,
+                name: t[1].name ?? "⚠︎ Tjenester som mangler forvaltingsteam",
+                count: t[1].services.length,
             }
         )
     }    

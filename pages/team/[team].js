@@ -27,9 +27,9 @@ export async function getStaticProps(context) {
     const svcs = team_svcs.get(context.params.team);
     return {
         props: {
-            team_name: svcs[0].operatorgroup_secondline,
+            team_name: svcs.name,
             team_slug: context.params.team,
-            services: svcs,
+            services: svcs.services,
         }
     };
 }

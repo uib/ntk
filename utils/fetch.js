@@ -21,11 +21,17 @@ export async function services_by_team() {
     const services = await fetch_services();
     let res = new Map();
     for (const svc of services) {
-        const team = team_slug(svc.operatorgroup_secondline);
-        if (!res.has(team)) {
-            res.set(team, []);
+        const team2 = team_slug(svc.operatorgroup_secondline);
+        const team3 = team_slug(svc.operatorgroup_thirdline);
+        if (!res.has(team2)) {
+            res.set(team2, {name: svc.operatorgroup_secondline, services: []});
         }
-        res.get(team).push(svc);
+        if (!res.has(team3)) {
+            res.set(team3, {name: svc.operatorgroup_thirdline, services: []});
+        }
+        res.get(team2).services.push(svc);
+        if (team2 != team3 && team3 != "null")
+            res.get(team3).services.push(svc);
     }
     return res;
 }

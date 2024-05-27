@@ -79,7 +79,8 @@ export default function Service({svc}) {
         <div className={styles.factContainer}>
           <Fact title="Tjenesteeier">{svc.owner}{peopleWithRoles(svc, "Kontaktperson Tjenesteeier")}</Fact>
           <Fact title="Brukerstøtte">{svc.operatorgroup_firstline}{peopleWithRoles(svc, "Kontaktperson Brukerstøtte")}</Fact>
-          <Fact title="Forvaltingsteam">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Drift/forvaltning", "Utvikler")}</Fact>
+          <Fact title="Funksjonelt forvaltingsteam">{svc.operatorgroup_secondline}{peopleWithRoles(svc, "Kontaktperson Funksjonell forvaltning", "Utvikler")}</Fact>
+          <Fact title="Teknisk forvaltingsteam">{svc.operatorgroup_thirdline}{peopleWithRoles(svc, "Kontaktperson Teknisk forvaltning", "Utvikler")}</Fact>
           <Fact title="Leverandør">{svc.supplier}</Fact>
           <Fact title="Produktstyre">{svc.business_domain}</Fact>
           <Fact title="Tjenestetype">{svc.servicetype}</Fact>
