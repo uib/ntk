@@ -5,7 +5,9 @@ import { services_by_team } from '../../utils/fetch';
 export default function Team({team_name, services}) {
     return (
         <div>
-            <h1>Tjenestene til team<br/>{team_name} ({services.length})</h1>
+            { team_name ? <h1>Tjenestene til team<br/>{team_name} ({services.length})</h1>
+                        : <h1>Tjenester som mangler forvaltingsteam ({services.length})</h1>
+            }
             <ul>
             { services.map(svc => <li key="svc.unid"><ServiceLink service={svc} fullname /></li>) }
             </ul>
