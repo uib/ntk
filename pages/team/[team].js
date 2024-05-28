@@ -5,8 +5,8 @@ import { services_by_team } from '../../utils/fetch';
 export default function Team({team_name, services}) {
     return (
         <div>
-            { team_name ? <h1>Tjenestene til team<br/>{team_name} ({services.length})</h1>
-                        : <h1>Tjenester som mangler forvaltingsteam ({services.length})</h1>
+            { team_name ? <h1>Tjenestene til forvalter<br/>{team_name} ({services.length})</h1>
+                        : <h1>Tjenester som mangler forvalter ({services.length})</h1>
             }
             <table>
               <thead>
@@ -28,7 +28,7 @@ export default function Team({team_name, services}) {
             }
               </tbody>
             </table>
-            <p><Link href="/team" className="button">Tilbake til team-listen</Link></p>
+            <p><Link href="/team" className="button">Tilbake til forvalteroversikten</Link></p>
         </div>
     );
 }

@@ -75,9 +75,9 @@ den er tilgjengelig.
 
 En annen viktig rolle hos tjenesteyter er *brukerstøtte* som er kontaktpunktet
 for brukere som trenger hjelp til å benytte tjenesten. Vi bruker også begrepet
-*forvaltningsteam* om de som i praksis vedlikeholder og tilrettelegger for
+*forvalter* om de som i praksis vedlikeholder og tilrettelegger for
 tjenesten og som brukerstøtte vil kunne delegere problemsaker til. Vi har valgt
-å representere både brukerstøtte og forvaltningsteam ved operatørgrupper i
+å representere både brukerstøtte og forvaltere ved operatørgrupper i
 UiBhjelp, og disse vil framkomme i denne oversikten.
 
 Mange IT-tjenester realiseres ved hjelp av et IT-system, og det er ikke alltid

@@ -5,14 +5,14 @@ import styles from '../../styles/Team.module.css';
 export default function Teams({teams}) {
     return (
         <article>
-            <h1>Forvaltningsteam med tjenester</h1>
+            <h1>Forvaltere med tjenester</h1>
             <p>Vi bruker operatørgrupper i UiBhjelp til å peke ut de som har ansvar for å
                 forvalte tjenestene. Lenkene under går til sider som lister opp tjeneste som hører
-                under hvert enkelt team.
+                under hvert enkel forvalter.
             </p>
             <table className={styles.teamTable}>
                 <thead>
-                <tr><th>Team</th><th>Antall tjenester</th></tr>
+                <tr><th>Forvalter</th><th>Antall tjenester</th></tr>
                 </thead>
                 <tbody>
 {teams.map(t => <tr key={t.slug}><td><Link href={"/team/" + t.slug}>{t.name}</Link></td><td>{t.count}</td></tr>)}
@@ -30,7 +30,7 @@ export async function getStaticProps(context) {
         teams.push(
             {
                 slug: t[0],
-                name: t[1].name ?? "⚠︎ Tjenester som mangler forvaltingsteam",
+                name: t[1].name ?? "⚠︎ Tjenester som mangler forvalter",
                 count: t[1].services.length,
             }
         )
