@@ -54,7 +54,7 @@ export async function getStaticProps(context) {
   for (const svc of services) {
     if (svc.id == "TJ0303") continue;
     for (const ref of svc.refs) {
-      if (ref.type == "Produksjonsmiljø") {
+      if (ref.type == "Produksjonsmiljø" && ref.href) {
         let schemeless = ref.href.replace(/^(ssh|ldap|http)s?:\/\//, "");
         let [host, path] = schemeless.split('/', 2);
         let host_lst = host.split('.');
