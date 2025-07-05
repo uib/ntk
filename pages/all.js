@@ -7,8 +7,9 @@ import { useState } from 'react'
 export default function Home({services}) {
   const [filter, setFilter] = useState({
     "Digitale forskningstjenester": true,
-    "Utdanningstjenester": false,
-    "Administrasjon og formidling": false,
+    "Utdanningstjenester": true,
+    "Administrasjon og formidling": true,
+    "Produktstyres av IT-direktør": true,
   });
   const filtered_services = services.filter(svc => filter[svc.business_domain]);
 
@@ -21,16 +22,18 @@ export default function Home({services}) {
 
       <div className={styles.main}>
         <h1>UiBs katalog over tilbudte bruker&shy;tjenester ({filtered_services.length})</h1>
+        <div className={styles.filter}>
         { Object.keys(filter).map(k =>
         <label key={k}>
           <input
             type="checkbox"
             checked={filter[k]}
             onChange={() => setFilter(prev => ({...prev, [k]: !prev[k]})) }
-          /> {k}
+          />&nbsp;{k}
         </label>
         )
         }
+        </div>
         <div className={styles.serviceContainer}>
         { filtered_services.map(svc =>
             <Link href={'/' + svc.id} key={svc.id}>

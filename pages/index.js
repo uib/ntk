@@ -20,6 +20,7 @@ export default function Home({services, synced_date}) {
       <div className={styles.main}>
         <input
             id="search"
+            type="text"
             value={filter}
             onChange={event => setFilter(event.target.value)}
             placeholder="Søk"
