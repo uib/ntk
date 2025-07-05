@@ -7,18 +7,18 @@ import styles from '../styles/Service.module.css'
 import { fetch_services } from '../utils/fetch';
 
 function Ref({type, href}) {
-  const iconMap = new Map(Object.entries({
-    "Brukerdokumentasjon": <FontAwesomeIcon icon={faQuestion} />,
-    "Kildekode": <FontAwesomeIcon icon={faCode} />,
-    "Produksjonsmiljø": <FontAwesomeIcon icon={faSquareArrowUpRight} />,
-    "Systemdokumentasjon": <FontAwesomeIcon icon={faCircleInfo} />,
-    "Testmiljø": <FontAwesomeIcon icon={faBug} />,
-    "Utviklingsmiljø": <FontAwesomeIcon icon={faCodeBranch} />,
-    'Tjenestebeskrivelse': <FontAwesomeIcon icon={faScroll} />,
-    "Rediger": <FontAwesomeIcon icon={faPencil} />,
+  const refMap = new Map(Object.entries({
+    "Brukerdokumentasjon": {icon: faQuestion,   name: "bruk"},
+    "Kildekode":           {icon: faCode,       name: "kode"},
+    "Produksjonsmiljø":    {icon: faSquareArrowUpRight, name: "prod" },
+    "Systemdokumentasjon": {icon: faCircleInfo, name: "sysdok" },
+    "Testmiljø":           {icon: faBug,        name: "test" },
+    "Utviklingsmiljø":     {icon: faCodeBranch, name: "dev" },
+    'Tjenestebeskrivelse': {icon: faScroll,     name: "ssp" },
+    "Rediger":             {icon: faPencil,     name: "rediger" },
   }));
   return (
-    <a className={styles.ref} href={href} title={type}>{iconMap.get(type) ?? <FontAwesomeIcon icon={faBomb} /> }</a>
+    <a className={styles.ref} href={href} title={type}><FontAwesomeIcon icon={refMap.get(type).icon ?? faBomb} /><div>{refMap.get(type).name ?? type}</div></a>
   );
 }
 

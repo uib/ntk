@@ -5,12 +5,27 @@
 
 .refContainer {
     float: right;
+    display: flex;
+    gap: 0.5rem;
 }
 
 a.ref {
-    padding: 5px;
+    padding: 2px;
     font-size: 20pt;
     color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+}
+
+a.ref:hover {
+    opacity: 1;
+}
+
+a.ref > div {
+    font-size: 10pt;
+
 }
 
 .main .serviceId {
