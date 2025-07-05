@@ -30,9 +30,12 @@
     padding: 5px 1rem;
 }
 
+.domain > table tr {
+    transition: background 0.3s ease;
+}
+
 .domain > table tr:hover {
     background: #eee;
-    transitition-delay: 1s;
 }
 
 .domain > table td:nth-child(1) {
