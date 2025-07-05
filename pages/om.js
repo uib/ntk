@@ -69,7 +69,7 @@ Hvis ingen er utpekt som tjenesteeier for en IT-tjeneste så tilfaller denne
 rollen IT-direktøren.)
 
 Tjenesteeier er juridisk ansvarlig for tjenesten og den som står til ansvar ved
-tvister eller hvis noe går galt som f.eks. sikkerhetshendeler. Tjenesteeier er
+tvister eller hvis noe går galt som f.eks. sikkerhetshendelser. Tjenesteeier er
 ansvarlig for å sørge for nødvendig finansiering for å drive tjenesten slik at
 den er tilgjengelig.
 
@@ -107,12 +107,12 @@ Tjenester klassifiseres til å tilhøre én av følgende typer:
   norsktalende i verden, alle studenter ved UiB, deltakere i forskningsprosjekt X eller
   fagfolk ved lønnskontoret.
 
-* *Understøttende tjeneste*. Dette er tjenester som hovedsaktlig brukes av programmer
+* *Understøttende tjeneste*. Dette er tjenester som hovedsakelig brukes av programmer
   som realiserer den overliggende tjenesten, typisk i form av APIer. Mange slike tjenester
   har også et brukergrensesnitt for administratorene av tjenestene.
 
 * *Plattform*. Dette er tjenester som hovedsaklig tilbyr kjøremiljøer og fundamental infrastruktur
-  hvor applikasjoner som tilbyr IT-tjenester kan leve. Disse kan også tilby brukergresesnitt
+  hvor applikasjoner som tilbyr IT-tjenester kan leve. Disse kan også tilby brukergrensesnitt
   for å konfigurere og sette opp ressurser.
 
 Data om tjenestene er tilgjengelig i et
