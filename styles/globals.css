@@ -92,6 +92,11 @@ footer {
   color: white;
   background: brown;
   padding: 0.4ex 0.8ex;
+  opacity: 0.5;
+}
+
+.button:hover {
+  opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
