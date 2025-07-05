@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareArrowUpRight, faCodeBranch, faQuestion, faBomb, faCircleInfo, faBug, faPencil, faScroll, faCode, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
@@ -152,6 +154,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const services = await fetch_services();
   const services_by_unid = new Map(services.map(d => [d.unid, d]));
+
   function add_svc_attrs(s1) {
     const s2 = services_by_unid.get(s1.unid);
     if (s2) {
@@ -167,6 +170,34 @@ export async function getStaticProps(context) {
       s1.lifecycle = "9-Unknown";
     }
   }
+
+  function generate_badge(svc) {
+    const filePath = path.join(process.cwd(), 'public', `${svc.id}-badge.svg`);
+    fs.writeFileSync(filePath, `<svg width="800" height="240" viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="3" width="794" height="234" rx="10" fill="#F6ECDF" stroke="#C05A1C" stroke-width="1.5"/>
+
+    <text x="30" y="40" font-family="monospace" font-size="18" fill="#808080" font-weight="normal">
+        ${svc.id}
+    </text>
+
+    <text x="30" y="80" font-family="sans-serif" font-size="36" fill="#C05A1C" font-weight="bold">
+        ${svc.short_name}
+    </text>
+
+    <text x="30" y="110" font-family="sans-serif" font-size="24" fill="#404040">
+        ${svc.name}
+    </text>
+
+    <line x1="20" y1="130" x2="774" y2="130" stroke="#C05A1C" stroke-width="3"/>
+
+    <text x="30" y="135" font-family="sans-serif" font-size="18" fill="#404040">
+        <tspan x="30" dy="1.2em"></tspan>
+        <tspan x="30" dy="1.2em"></tspan>
+        <tspan x="30" dy="1.2em"></tspan>
+    </text>
+</svg>`);
+  }
+
   for (const svc of services) {
     if (svc.id == context.params.id) {
       for (const link of svc.links) {
@@ -177,6 +208,7 @@ export async function getStaticProps(context) {
           add_svc_attrs(link.child);
         }
       }
+      generate_badge(svc);
       return { props: { svc } };
     }
   }
