@@ -172,7 +172,11 @@ export async function getStaticProps(context) {
   }
 
   function generate_badge(svc) {
-    const filePath = path.join(process.cwd(), 'public', `${svc.id}-badge.svg`);
+    const svcDir = path.join(process.cwd(), 'public', svc.id);
+    if (!fs.existsSync(svcDir)) {
+      fs.mkdirSync(svcDir);
+    }
+    const filePath = path.join(svcDir, 'badge.svg');
     fs.writeFileSync(filePath, `<svg width="800" height="240" viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="3" y="3" width="794" height="234" rx="10" fill="#F6ECDF" stroke="#C05A1C" stroke-width="1.5"/>
 

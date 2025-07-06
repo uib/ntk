@@ -10,7 +10,7 @@
 
 # next.js
 /.next/
-/public/*-badge.svg
+/public/*/badge.svg
 /out/
 
 # production
