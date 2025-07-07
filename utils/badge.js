@@ -22,6 +22,8 @@ export function generate_badge(svc) {
     const border_width = 3;
     const padding = 40;
     const divider_offset = 20;
+    const marker_size = 42;
+
     const bg_color = "#F6ECDF";
     const kicker_color = "#808080";
     const title_color = "#C05A1C";
@@ -42,6 +44,7 @@ export function generate_badge(svc) {
     if (desc_lines.length > 3) {
         desc_lines[2] += " ...";
     }
+    const criticality_class = svc.criticality.charAt(0)
 
     let svg = `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,6 +69,10 @@ export function generate_badge(svc) {
         <tspan x="${border_width + padding}" dy="1.3em">${desc_lines[1] ?? ''}</tspan>
         <tspan x="${border_width + padding}" dy="1.3em">${desc_lines[2] ?? ''}</tspan>
     </text>
+
+    <!-- critically class -->
+    <rect x="${width - border_width*2 - marker_size - 20 }" y="20" width="${marker_size}" height="${marker_size}" rx="4" fill="#ffffff" stroke="${line_color}" stroke-width="1.5" />
+    <text x="${width - border_width*2 - marker_size/2 - 20 }" y="${20 + marker_size/2 + marker_size/10}" text-anchor="middle" alignment-baseline="middle" fill="${title_color}" font-family="${font_family}" font-weight="bold" font-size="${marker_size}">${criticality_class}</text>
 </svg>`;
     return svg.trim();
 }
