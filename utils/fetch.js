@@ -17,6 +17,11 @@ export async function fetch_services() {
     return services;
 }
 
+export async function get_service(id) {
+    const services = await fetch_services();
+    return services.find(svc => svc.id == id);
+}
+
 export async function services_by_team() {
     const services = await fetch_services();
     let res = new Map();
@@ -36,7 +41,6 @@ export async function services_by_team() {
     return res;
 }
 
-
 export function team_slug(team_name) {
     return String(team_name).
         toLowerCase().
@@ -48,9 +52,4 @@ export function team_slug(team_name) {
         replaceAll('å', 'a').
         replace(/\s+/g, '-').
         replace(/-+/g, '-');
-}
-
-export async function get_service(id) {
-    const services = await fetch_services();
-    return services.find(svc => svc.id == id);
 }
