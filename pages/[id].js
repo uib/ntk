@@ -66,6 +66,8 @@ export default function Service({svc}) {
     <>
       <Head>
         <title>{svc.name}</title>
+        <meta property="og:title" content={svc.name} />
+        <meta property="og:image" content={`https://ntk.app.uib.no/${svc.id}/badge.svg`} />
       </Head>
       <div className={styles.main}>
         <div className={styles.refContainer}>
