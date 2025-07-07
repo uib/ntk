@@ -4,7 +4,7 @@ let services_fetch_time = null;
 export async function fetch_services() {
     if (services) {
         const age = Date.now() - services_fetch_time;
-        console.log(`Returning services from cache with age=${age/1000}s`)
+        console.warn(`Returning services from cache with age=${age/1000}s`)
         return services;
     }
     const before = Date.now();
@@ -12,7 +12,7 @@ export async function fetch_services() {
     services = await res.json();
     services = services.filter(svc => !svc.meta.archived);
     const after = Date.now();
-    console.log(`Fetched data from tk-topdesk API in ${after - before}ms`)
+    console.warn(`Fetched data from tk-topdesk API in ${after - before}ms`)
     services_fetch_time = after;
     return services;
 }
@@ -36,6 +36,7 @@ export async function services_by_team() {
     return res;
 }
 
+
 export function team_slug(team_name) {
     return String(team_name).
         toLowerCase().
@@ -47,4 +48,9 @@ export function team_slug(team_name) {
         replaceAll('å', 'a').
         replace(/\s+/g, '-').
         replace(/-+/g, '-');
+}
+
+export async function get_service(id) {
+    const services = await fetch_services();
+    return services.find(svc => svc.id == id);
 }
