@@ -40,7 +40,7 @@ export function generate_badge(svc) {
             subtitle = subtitle.slice(1).trimStart();
         }
     }
-    let desc_lines = wrapText(svc.description ?? '', 90);
+    let desc_lines = wrapText(svc.description ?? '', 84);
     if (desc_lines.length > 3) {
         desc_lines[2] += " ...";
     }
