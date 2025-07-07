@@ -2,12 +2,14 @@
   "name": "nexttk",
   "version": "0.2.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "badge": "node utils-cli/badge.js"
   },
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.7.2",

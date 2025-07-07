@@ -10,11 +10,14 @@
 
 # next.js
 /.next/
-/public/*/badge.svg
 /out/
 
 # production
 /build
+
+# our generated badges
+/public/*/badge.svg
+/TJ*-badge.svg
 
 # misc
 .DS_Store
