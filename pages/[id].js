@@ -60,7 +60,16 @@ export default function Service({svc}) {
   refs.push({
     type: 'Rediger',
     href: 'https://hjelp.uib.no/tas/secure/assetmgmt/card.html?unid=' + svc.unid,
-  })
+  });
+
+  const ref_type_order = new Map([
+    ["Produksjonsmiljø", 1],
+    ["Brukerdokumentasjon", 5],
+    ["Systemdokumentasjon", 6],
+    ["Kildekode", 10],
+    ["Utviklingsmiljø", 11],
+    ["Testmiljø", 12],
+  ]);
 
   return (
     <>
@@ -71,7 +80,10 @@ export default function Service({svc}) {
       </Head>
       <div className={styles.main}>
         <div className={styles.refContainer}>
-        { refs.map(ref => <Ref type={ref.type} href={ref.href} key={ref.type + ref.href}/>)}
+        { refs
+          .sort((a, b) => (ref_type_order.get(a.type) ?? 99) - (ref_type_order.get(b.type) ?? 99))
+          .map(ref => <Ref type={ref.type} href={ref.href} key={ref.type + ref.href}/>)
+        }
         </div>
         <div>
           <span className={styles.serviceId}>{svc.id}</span>
