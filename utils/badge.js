@@ -20,7 +20,7 @@ export function generate_badge(svc) {
     const width = 800;
     const height = 240;
     const border_width = 5;
-    const slider = 50;
+    const slider = 60;
     const padding = 25;
     const divider_offset = 0;
     const marker_size = 32;
@@ -56,6 +56,8 @@ export function generate_badge(svc) {
 
     <use href="#outline"  fill="${bg_color}" stroke="none" />"
     <rect width="${border_width + slider}" height="${height}" fill="${line_color}" clip-path="url(#outline-clip)" />
+    <text x="${border_width + slider/2}" y="${height/2-5}" text-anchor="middle" font-family="Courier" font-size="40" font-weight="bold" fill="${bg_color}">TJ</text>
+    <text x="${border_width + slider/2}" y="${height/2+5}" text-anchor="middle" font-family="Verdana" font-size="8" font-weight="bold" fill="${bg_color}">katalogen</text>
 
     <text x="${border_width + slider + padding}" y="40" font-family="monospace" font-size="18" fill="${kicker_color}" font-weight="normal">
         ${svc.id}
