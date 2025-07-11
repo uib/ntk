@@ -50,7 +50,7 @@ export function generate_badge(svc) {
     let svg = `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-       <rect id="outline" x="${border_width/2}" y="${border_width/2}" width="${width - border_width*2}" height="${height - border_width*2}" rx="20"  stroke-width="${border_width}"/>
+       <rect id="outline" x="${border_width/2}" y="${border_width/2}" width="${width - border_width}" height="${height - border_width}" rx="20"  stroke-width="${border_width}"/>
        <clipPath id="outline-clip"> <use href="#outline" /> </clipPath>
     </defs>
 
@@ -71,7 +71,7 @@ export function generate_badge(svc) {
         ${subtitle}
     </text>
 
-    <line x1="${border_width + slider + padding - divider_offset}" y1="130" x2="${width - border_width*2 - padding + divider_offset}" y2="130" stroke="${line_color}" stroke-width="3"/>
+    <line x1="${border_width + slider + padding - divider_offset}" y1="130" x2="${width - border_width - padding + divider_offset}" y2="130" stroke="${line_color}" stroke-width="3"/>
 
     <text x="${border_width + slider + padding}" y="135" font-family="${font_family}" font-size="18" fill="#404040">
         <tspan x="${border_width + slider + padding}" dy="1.3em">${desc_lines[0] ?? ''}</tspan>
@@ -80,8 +80,8 @@ export function generate_badge(svc) {
     </text>
 
     <!-- critically class -->
-    <rect x="${width - border_width*2 - marker_size - 20 }" y="20" width="${marker_size}" height="${marker_size}" rx="4" fill="#ffffff" stroke="${line_color}" stroke-width="1.5" />
-    <text x="${width - border_width*2 - marker_size/2 - 20 }" y="${20 + marker_size/2 + marker_size/10}" text-anchor="middle" alignment-baseline="middle" fill="${title_color}" font-family="${font_family}" font-weight="bold" font-size="${marker_size}">${criticality_class}</text>
+    <rect x="${width - border_width - marker_size - 20 }" y="20" width="${marker_size}" height="${marker_size}" rx="4" fill="#ffffff" stroke="${line_color}" stroke-width="1.5" />
+    <text x="${width - border_width - marker_size/2 - 20 }" y="${20 + marker_size/2 + marker_size/10}" text-anchor="middle" alignment-baseline="middle" fill="${title_color}" font-family="${font_family}" font-weight="bold" font-size="${marker_size}">${criticality_class}</text>
 
     <use href="#outline" fill="none" stroke="${line_color}" />
 </svg>`;
