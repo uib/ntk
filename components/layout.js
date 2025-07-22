@@ -4,7 +4,8 @@ function Navbar() {
     return (
         <nav>
             <ul>
-                <li><Link href="/"><img src="logo.svg" alt="Hjem" className="logo" /></Link></li>
+                <li><Link href="/"><img src="/logo.svg" alt="Hjem" className="logo" /></Link></li>
+                <li><Link href="/">Porte&shy;føljen</Link></li>
                 <li><Link href="/all">Bruker&shy;tjenester</Link></li>
                 <li><Link href="/domain">Domene&shy;navn</Link></li>
                 <li><Link href="/team">Forvaltere</Link></li>
