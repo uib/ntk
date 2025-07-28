@@ -23,10 +23,10 @@ export function generate_badge(svc) {
     const slider = 60;
     const padding = 25;
     const divider_offset = 0;
-    const marker_size = 32;
+    const marker_size = 40;
 
     const bg_color = "#EEEEEE";
-    const kicker_color = "#888888";
+    const kicker_color = "#AAAAAA";
     const title_color = "brown";
     const text_color = "#222222";
     const line_color = "brown";
@@ -45,7 +45,14 @@ export function generate_badge(svc) {
     if (desc_lines.length > 3) {
         desc_lines[2] += " ...";
     }
-    const criticality_class = svc.criticality.charAt(0)
+    const criticality_class = svc.criticality.charAt(0);
+    const lifecycle_class = {
+        "1 - Planlagt": "✧",
+        "1.1- Pilot/Testdrift": "⚙︎",
+        "2 - Produksjon": "︎✓",
+        "3 - Under utfasing": "✗",
+        "4 - Avviklet": "⚱︎"
+    }[svc.lifecycle];
 
     let svg = `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +66,7 @@ export function generate_badge(svc) {
     <text x="${border_width + slider/2}" y="${height/2-5}" text-anchor="middle" font-family="Courier" font-size="40" font-weight="bold" fill="${bg_color}">TJ</text>
     <text x="${border_width + slider/2}" y="${height/2+5}" text-anchor="middle" font-family="Verdana" font-size="8" font-weight="bold" fill="${bg_color}">katalogen</text>
 
-    <text x="${border_width + slider + padding}" y="40" font-family="monospace" font-size="18" fill="${kicker_color}" font-weight="normal">
+    <text x="${border_width + slider + padding}" y="40" font-family="monospace" font-size="18" fill="${kicker_color}" font-weight="bold">
         ${svc.id}
     </text>
 
@@ -80,8 +87,12 @@ export function generate_badge(svc) {
     </text>
 
     <!-- critically class -->
-    <rect x="${width - border_width - marker_size - 20 }" y="20" width="${marker_size}" height="${marker_size}" rx="4" fill="#ffffff" stroke="${line_color}" stroke-width="1.5" />
-    <text x="${width - border_width - marker_size/2 - 20 }" y="${20 + marker_size/2 + marker_size/10}" text-anchor="middle" alignment-baseline="middle" fill="${title_color}" font-family="${font_family}" font-weight="bold" font-size="${marker_size}">${criticality_class}</text>
+    <rect x="${width - border_width - marker_size   - 20 }" y="20" width="${marker_size}" height="${marker_size}" rx="6" fill="${line_color}" stroke="none" />
+    <text x="${width - border_width - marker_size/2 - 20 }" y="${20 + marker_size/2 + marker_size*0.8/10}" text-anchor="middle" alignment-baseline="middle" fill="${bg_color}" font-family="${font_family}" font-weight="bold" font-size="${marker_size*0.8}">${criticality_class}</text>
+
+    <!-- lifecycle class -->
+    <rect x="${width - border_width - marker_size   - 20 - (marker_size*1 + 8) }" y="20" width="${marker_size}" height="${marker_size}" rx="6" fill="${line_color}" stroke="none" />
+    <text x="${width - border_width - marker_size/2 - 20 - (marker_size*1 + 8) }" y="${20 + marker_size/2}" text-anchor="middle" alignment-baseline="middle" fill="${bg_color}" font-family="${font_family}" font-weight="normal" font-size="${marker_size*0.8}">${lifecycle_class}</text>
 
     <use href="#outline" fill="none" stroke="${line_color}" />
 </svg>`;
