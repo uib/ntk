@@ -45,6 +45,10 @@ nav .logo {
   width: 3rem;
 }
 
+nav li.active {
+  border-bottom: 3px solid white;
+}
+
 main {
   padding: 2rem 0;
   flex: 1;
