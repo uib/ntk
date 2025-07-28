@@ -21,9 +21,9 @@ export default function Team({team_name, services}) {
             { services.map(svc =>
               <tr key="svc.unid">
                 <td><ServiceLink service={svc} fullname /></td>
-                <td>{team_name && svc.operatorgroup_firstline  == team_name ? "🟥" : "⬜️"}</td>
-                <td>{team_name && svc.operatorgroup_secondline == team_name ? "🟥" : "⬜️"}</td>
-                <td>{team_name && svc.operatorgroup_thirdline  == team_name ? "🟥" : "⬜️"}</td>
+                <td>{team_name && svc.operatorgroup_firstline  === team_name ? "☑️" : (svc.operatorgroup_firstline  ? "⬜️" : "➖")}</td>
+                <td>{team_name && svc.operatorgroup_secondline === team_name ? "☑️" : (svc.operatorgroup_secondline ? "⬜️" : "➖")}</td>
+                <td>{team_name && svc.operatorgroup_thirdline  === team_name ? "☑️" : (svc.operatorgroup_thirdline  ? "⬜️" : "➖")}</td>
               </tr>)
             }
               </tbody>
