@@ -38,6 +38,7 @@ function Fact({title, children}) {
 }
 
 function peopleWithRoles(svc, ...role) {
+  if (!svc?.people) return [];
   return svc.people
     .filter(d => role.includes(d.role))
     .map(d => <div className={styles.person} title={d.role} key={d.person}><FontAwesomeIcon icon={faUser} /> {d.person}</div>);
